@@ -1,0 +1,19 @@
+{
+  "name": "csv-to-json",
+  "version": "1.0.0",
+  "description": "A simple csv to json convertor",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node ."
+  },
+  "keywords": [
+    "csv",
+    "json"
+  ],
+  "author": "WessCoby",
+  "license": "ISC",
+  "dependencies": {
+    "progress": "^2.0.3"
+  }
+}
