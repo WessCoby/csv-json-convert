@@ -9,7 +9,7 @@
 count=0
 while read -r line;
 do
-    [ $count -ge 1 ] && echo $line;
+    [ $count -ge 1 ] && echo $line;     ### Ignore the first line [header]
     let count++;
-    sleep 0.1;
-done < $1
+    sleep 0.1;                          ### Reading and outputing lines within a 0.1second interval
+done < $1                               ### CSV file argument

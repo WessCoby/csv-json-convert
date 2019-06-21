@@ -23,7 +23,6 @@ const collect = data => {
 
 read_heading.stdout.on('data', head => {
         headings = head.replace("\n", "").split(",");
-
 });
 
 read_heading.on('close', () => {
