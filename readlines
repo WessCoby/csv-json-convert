@@ -6,10 +6,13 @@
 #: Version:         1.0.0
 #: Description:     Script to read lines from a csv file
 
+### Reading and outputing lines at specified interval
+interval=0.000000000000000000001
+
 count=0
 while read -r line;
 do
     [ $count -ge 1 ] && echo $line;     ### Ignore the first line [header]
     let count++;
-    sleep 0.00001;                          ### Reading and outputing lines at an interval of 0.01 milliseconds
+    sleep $interval;
 done < $1                               ### CSV file argument
