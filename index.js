@@ -24,10 +24,10 @@ async function collect_csv_data() {
 	lines = lines.stdout - 1;
 
 	// Progress Bar
-	const bar = new ProgressBar('Converting File [:bar] Lines processed: :current/:total | :percent complete | :etas remaining', {
+	const bar = new ProgressBar('Converting [:bar] Lines processed: :current/:total [:percent] | Time: :elapseds elapsed, :etas remaining.', {
 			complete: '=',
 			incomplete: ' ',
-			width: 30,
+			width: 20,
 			total: lines
 	});
 
@@ -60,7 +60,7 @@ async function save_data_to_file(data) {
 	// Write data to file
 	fs.writeFile(`./${file}.json`, data, 'utf8', (error, data) => {
 		if (error) throw error;
-		log(`Conversion sucessful. File [ ${file}.json ] saved in current working directory`);
+		log(`Done. New file [ ${file}.json ] saved in current working directory`);
 	});
 };
 
