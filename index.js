@@ -45,9 +45,24 @@ async function collect_csv_data() {
 	});
 	// Once Complete
 	content.on('close', () => {
-			log(jsonData);
 			// call function to save data to new file and output completion message
+			save_data_to_file(jsonData)
 	});
 }
 
+async function save_data_to_file(data) {
+	// Stringify data
+	data = JSON.stringify(data, null, 2);
+
+	// extract name from csv file to be used as new json file name
+	let file = path.basename(`${process.argv[2]}`, '.csv');
+	
+	// Write data to file
+	fs.writeFile(`./${file}.json`, data, 'utf8', (error, data) => {
+		if (error) throw error;
+		log(`Conversion sucessful. File [ ${file}.json ] saved in current working directory`);
+	});
+};
+
+// Start
 collect_csv_data();
