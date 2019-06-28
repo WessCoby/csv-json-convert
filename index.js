@@ -12,10 +12,10 @@ async function collect_csv_data() {
 	// Push data from the csv file to jsonData.data 
 	const collect = data => {
 		let record = {};
-		data = data.replace("\n", "").split(',');
-		for(let element = 0; element < data.length; element++) {
-			record[headings[element]] = data[element];
-		}
+		data = data.replace("\n", "").split(',').values(); // iterator
+		Array.from(headings, header => {
+			record[header] = data.next().value;
+		});
 		jsonData['data'].push(record);
 	};
 
