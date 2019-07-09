@@ -9,9 +9,10 @@
   },
   "keywords": [
     "csv",
-    "json"
+    "json",
+    "convert"
   ],
-  "author": "WessCoby <",
+  "author": "WessCoby <wc@wesscoby.me> (http://wesscoby.me)",
   "license": "ISC",
   "repository": {
     "type": "git",
