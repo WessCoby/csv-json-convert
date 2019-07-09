@@ -1,5 +1,5 @@
 # CSV to JSON Convertor
-A simple csv to json convertor
+A simple csv-json convertor
 
 ![Preview](./preview.png)
 

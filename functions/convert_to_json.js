@@ -1,30 +1,44 @@
 import fs from 'fs';
 import readline from 'readline';
 import path from 'path';
+import Queue from '../Queue';
 
 
 module.exports = (csvFile, callback) => {
     // Props
-    let API, jsonData = { data: [] };
-    const keys = ['id', 'first_name', 'last_name', 'email', 'gender', 'ip_address'];
+    let API, keys, jsonData = { data: [] };
 
-    // Push data from the csv file to jsonData object
+    // Read csvFile line by line
+    const readInterface = readline.createInterface({
+        input: fs.createReadStream(csvFile),
+        output: null,
+        console: false
+    });
+
+    // Push argument (objectified) to jsonData object
     const collect = csv_data => {
         let record = {}; 
-        csv_data = csv_data.replace("\n", "").split(',').values();  // turn into iterator
+        csv_data = csv_data.values();  // turn into iterator
         
         Array.from(keys, key => {
             record[key] = csv_data.next().value
         });
+        
         jsonData['data'].push(record);
     };
 
-    const save = (options = {}) => {
-        
-        const data = JSON.stringify(jsonData.data, null, 0);
+    // Save data to file
+    const save = ({filename, prettify, spaces} = {filename: csvFile, prettify: false, spaces: 0}) => {
+        let data;
+        // Stringify data
+        if(prettify) {
+            data = JSON.stringify(jsonData.data, null, spaces);
+        } else {
+            data = JSON.stringify(jsonData.data);
+        }
 
         // extract name from csv file to be used as new json file name
-        let file = path.basename(`${csvFile}`, '.csv');
+        let file = path.basename(`${filename}`, '.csv');
         
         // Write data to file
         fs.writeFile(`./${file}.json`, data, 'utf8', (error, data) => {
@@ -32,24 +46,24 @@ module.exports = (csvFile, callback) => {
             console.log(`Done. New file [ ${file}.json ] saved in current working directory`);
         });
     }
-     
-
-    const readInterface = readline.createInterface({
-        input: fs.createReadStream(csvFile),
-        output: null,
-        console: false
-    });
     
-    
-    
+    //* Read and enqueue data from csvFile
     readInterface.on('line', data => {
-        collect(data);
+        Queue.enqueue(data.replace("\n", "").split(','));
     });
+
+    //? Done Reading from csvFile?
     readInterface.on('close', () => {
+        keys = Queue.dequeue(); // Extract the first item from Queue, the column headers
+        while(!Queue.is_empty()) collect(Queue.dequeue()); // Extract everything else from Queue
+
+        // Public API
         API = {
             data: jsonData.data,
             save
         }
+
+        // Serve API as callback argument
         callback(API);
     });
 }

@@ -9,10 +9,15 @@
   },
   "keywords": [
     "csv",
-    "json"
+    "json",
+    "convert"
   ],
-  "author": "WessCoby",
+  "author": "WessCoby <wc@wesscoby.me> (http://wesscoby.me)",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WessCoby/csv-json-convertor.git"
+  },
   "dependencies": {
     "@babel/polyfill": "^7.4.4"
   },
