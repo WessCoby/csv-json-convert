@@ -27,13 +27,18 @@ module.exports = (csvFile, callback) => {
         jsonData['data'].push(record);
     };
 
-    // Save data to File
-    const save = (options = {}) => {
-        
-        const data = JSON.stringify(jsonData.data, null, 1);
+    // Save data to file
+    const save = ({filename, prettify, spaces} = {filename: csvFile, prettify: false, spaces: 0}) => {
+        let data;
+        // Stringify data
+        if(prettify) {
+            data = JSON.stringify(jsonData.data, null, spaces);
+        } else {
+            data = JSON.stringify(jsonData.data);
+        }
 
         // extract name from csv file to be used as new json file name
-        let file = path.basename(`${csvFile}`, '.csv');
+        let file = path.basename(`${filename}`, '.csv');
         
         // Write data to file
         fs.writeFile(`./${file}.json`, data, 'utf8', (error, data) => {

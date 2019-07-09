@@ -3,6 +3,10 @@ import path from 'path';
 
 toJson('./sample-data/thousand-lines.csv', api => {
     console.log(api.data);
-    api.save();
-    
+    const options = {
+        filename: 'data',
+        prettify: false, 
+        spaces: 4
+    }
+    api.save(options);
 });
