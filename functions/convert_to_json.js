@@ -25,7 +25,6 @@ module.exports = (csvFile, callback) => {
 
         // extract name from csv file to be used as new json file name
         let file = path.basename(`${csvFile}`, '.csv');
-        let dir = path.dir(csvFile);
         
         // Write data to file
         fs.writeFile(`./${file}.json`, data, 'utf8', (error, data) => {
@@ -44,7 +43,7 @@ module.exports = (csvFile, callback) => {
     
     
     readInterface.on('line', data => {
-        
+        collect(data);
     });
     readInterface.on('close', () => {
         API = {
