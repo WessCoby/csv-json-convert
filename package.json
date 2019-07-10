@@ -1,5 +1,5 @@
 {
-  "name": "csv-json-convertor",
+  "name": "convertor-csv-json",
   "version": "1.0.0",
   "description": "A simple csv-json convertor",
   "main": "dist",
