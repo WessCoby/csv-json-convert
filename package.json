@@ -1,11 +1,11 @@
 {
   "name": "csv-json-convertor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple csv-json convertor",
-  "main": "index.js",
+  "main": "dist",
   "scripts": {
     "test": "jest",
-    "start": "babel-node ."
+    "build": "babel src --out-dir dist"
   },
   "keywords": [
     "csv",
@@ -18,13 +18,10 @@
     "type": "git",
     "url": "https://github.com/WessCoby/csv-json-convertor.git"
   },
-  "dependencies": {
-    "@babel/polyfill": "^7.4.4"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.0",
-    "@babel/node": "^7.5.0",
     "@babel/preset-env": "^7.5.0",
     "jest": "^24.8.0"
   }
