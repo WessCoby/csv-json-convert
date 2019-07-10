@@ -1,10 +1,10 @@
 import fs from 'fs';
-import readline from 'readline';
+const readline = require('readline');
 import path from 'path';
 import Queue from '../Queue';
 
 
-module.exports = (csvFile, callback) => {
+const convert_to_json = (csvFile, callback) => {
     // Props
     let API, keys, jsonData = { data: [] };
 
@@ -67,3 +67,5 @@ module.exports = (csvFile, callback) => {
         callback(API);
     });
 }
+
+export default convert_to_json;
