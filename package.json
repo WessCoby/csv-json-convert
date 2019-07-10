@@ -1,5 +1,5 @@
 {
-  "name": "csv-json-convert",
+  "name": "csv-json-convertor",
   "version": "1.0.1",
   "description": "A simple csv-json convertor",
   "main": "dist",
@@ -18,7 +18,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/WessCoby/csv-json-convert.git"
+    "url": "https://github.com/WessCoby/csv-json-convertor.git"
   },
   "dependencies": {},
   "devDependencies": {
