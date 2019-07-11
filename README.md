@@ -6,7 +6,7 @@
 
 
 # Overview
-Csv-json-convertor, as its name implies, is a simple csv-json conversion tool. You can use it to easily convert csv files to json objects and/files, as well as the other way around (convert json files to csv).
+Csv-json-convertor, as its name implies, is a simple *csv-json* conversion tool. You can use it to easily convert csv files to json objects and/or files, as well as the other way around (convert json files to csv).
 
 # Installation
 Install via npm: <br>
