@@ -28,7 +28,9 @@ const convert_to_json = (csvFile, callback) => {
     };
 
     // Save data to file
-    const save = ({filename, prettify, spaces} = {filename: csvFile, prettify: false, spaces: 0}) => {
+    const save = (
+        {filename = csvFile, prettify = false, spaces = 1} = {filename: csvFile, prettify: false, spaces: 1}
+        ) => {
         let data;
         // Stringify data
         if(prettify) {
