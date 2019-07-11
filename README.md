@@ -1,15 +1,16 @@
 ![Converter banner](./images/banner.png)
 
-![npm latest version](https://img.shields.io/npm/v/csv-json-convertor/latest.svg?style=plastic)
+![npm latest version](https://img.shields.io/npm/v/csv-json-convertor.svg?label=csv-json-convertor)
+![package downloads](https://img.shields.io/npm/dw/csv-json-convertor.svg)
 ![licence](https://img.shields.io/npm/l/csv-json-convertor.svg?style=plastic)
-![downloads](https://img.shields.io/npm/dw/csv-json-convertor.svg)
+
 
 
 # Overview
 Csv-json-convertor, as its name implies, is a simple *csv-json* conversion tool. You can use it to easily convert csv files to json objects and/or files, as well as the other way around (convert json files to csv).
 
 # Installation
-Install via npm: <br>
+**Install via npm**: `npm install csv-json-convertor` <br>
 [![NPM](https://nodei.co/npm/csv-json-convertor.png)](https://npmjs.org/package/csv-json-convertor)
 
 
