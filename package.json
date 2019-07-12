@@ -1,6 +1,6 @@
 {
   "name": "csv-json-convertor",
-  "version": "1.0.3",
+  "version": "1.1.3",
   "description": "A simple csv-json convertor",
   "main": "dist",
   "scripts": {
@@ -20,7 +20,9 @@
     "type": "git",
     "url": "https://github.com/WessCoby/csv-json-convertor.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "fast-csv": "^3.1.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.0",
