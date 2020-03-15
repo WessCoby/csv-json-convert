@@ -1,5 +1,4 @@
 src/
-.babelrc
-.idea/
+tsconfig.json
 .vcode/
 images/banner.psd
