@@ -5,8 +5,8 @@
   "main": "dist",
   "scripts": {
     "test": "jest",
-    "build": "babel src --out-dir dist",
-    "publish": "npm publish --access public"
+    "build": "tsc",
+    "publish": "npm publish"
   },
   "keywords": [
     "csv",
@@ -24,9 +24,10 @@
     "fast-csv": "^3.1.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.0",
-    "@babel/core": "^7.5.0",
-    "@babel/preset-env": "^7.5.0",
-    "jest": "^24.8.0"
+    "jest": "^24.8.0",
+    "typescript": "^3.8.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

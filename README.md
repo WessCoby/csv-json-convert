@@ -1,7 +1,8 @@
 ![Converter banner](./images/banner.png)
 
-[![npm latest version](https://img.shields.io/npm/v/csv-json-convertor.svg?label=csv-json-convertor)](https://www.npmjs.com/package/csv-json-convertor)
-[![package downloads](https://img.shields.io/npm/dw/csv-json-convertor.svg)](https://www.npmjs.com/package/csv-json-convertor)
+![npm (tag)](https://img.shields.io/npm/v/csv-json-convertor/latest?style=plastic)
+![npm](https://img.shields.io/npm/dt/csv-json-convertor?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/wesscoby/csv-json-convertor?style=plastic)
 ![licence](https://img.shields.io/npm/l/csv-json-convertor.svg?style=plastic)
 
 
@@ -11,7 +12,8 @@ Csv-json-convertor, as its name implies, is a simple *csv-json* conversion tool.
 
 # Installation
 **Install via npm**: `npm install csv-json-convertor` <br>
-[![NPM](https://nodei.co/npm/csv-json-convertor.png)](https://npmjs.org/package/csv-json-convertor)
+[![NPM](https://img.shields.io/badge/install-npm%20install%20csv--json--convertor-blue)](https://npmjs.org/package/csv-json-convertor)
+
 
 
 # Usage
