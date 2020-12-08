@@ -21,7 +21,7 @@
     "url": "https://github.com/WessCoby/csv-json-convertor.git"
   },
   "dependencies": {
-    "fast-csv": "^3.1.0"
+    "fast-csv": "^4.3.6"
   },
   "devDependencies": {
     "jest": "^24.8.0",
